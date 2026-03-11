@@ -82,9 +82,7 @@ const NewsList = ({ category = "general", query, pageSize = 12 }: NewsListProps)
         setLoading(true);
         setError(null);
         try {
-            const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
             const params: Record<string, string | number> = {
-                apiKey: apiKey!,
                 pageSize,
                 language: "en",
             };

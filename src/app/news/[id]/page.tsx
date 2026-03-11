@@ -107,7 +107,6 @@ export default function NewsDetailPage() {
             try {
                 const indexPart = id.split("-")[0];
                 const index = parseInt(indexPart, 10);
-                const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
                 const { data } = await axios.get("/api/news", {
                     params: { pageSize: 20, language: "en", category: "general", country: "us" },
                 });
