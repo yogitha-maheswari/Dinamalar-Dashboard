@@ -100,7 +100,7 @@ const NewsList = ({ category = "general", query, pageSize = 12 }: NewsListProps)
                 params.country = "us";
             }
 
-            const { data } = await axios.get<NewsApiResponse>(url, { params });
+            const { data } = await axios.get<NewsApiResponse>("/api/news", { params });
 
             if (data.status !== "ok") throw new Error("News API returned an error.");
 

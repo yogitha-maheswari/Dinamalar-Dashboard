@@ -108,8 +108,8 @@ export default function NewsDetailPage() {
                 const indexPart = id.split("-")[0];
                 const index = parseInt(indexPart, 10);
                 const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
-                const { data } = await axios.get("https://newsapi.org/v2/top-headlines", {
-                    params: { apiKey, pageSize: 20, language: "en", category: "general", country: "us" },
+                const { data } = await axios.get("/api/news", {
+                    params: { pageSize: 20, language: "en", category: "general", country: "us" },
                 });
                 const articles: Article[] = data.articles ?? [];
                 const found = articles[index] ?? articles[0] ?? null;
